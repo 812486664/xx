@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=640, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>衡水金卷服务平台</title>
+    <link rel="stylesheet" href="./public/lib/normalize.min.css" />
+    <link rel="stylesheet" href="./public/lib/validate.css" />
+    <link rel="stylesheet" href="./public/css/index.css" />
+</head>
+
+<body>
+    <header>
+        <h1 class="title">衡水金卷服务平台</h1>
+        <img class="header-bg" src="./public/img/header.png" alt="衡水金卷原创试题组稿" />
+        <p>
+            河北金卷教育科技有限公司，秉承“品质源于专业，教育成就未来”的精神，公司将一如既往的致力于产品的质量，逐步走向完善。但难免百密一疏，现诚邀您帮助我们“同步完善，追求卓越”，将您在使用过程中发现的问题和宝贵的建议及时反馈给我们，一经采纳，将给予奖励！
+        </p>
+    </header>
+
+    <section class="main-content">
+        <form class="form" id="surveyForm" action="#">
+            <div class="input-group required">
+                <label class="label" for="subject">1.科目</label>
+                <input name="subject" type="text" data-required="true" data-descriptions="subject" />
+            </div>
+            <div class="input-group required">
+                <label class="label" for="round">2.应用轮次</label>
+
+                <select name="round" data-required="true" data-descriptions="round">
+                    <option value=""></option>
+                    <option value="one">一轮</option>
+                    <option value="two">二轮</option>
+                    <option value="sync">同步</option>
+                </select>
+            </div>
+            <div class="input-group required">
+                <label class="label" for="chapter">3.应用章节</label>
+                <input name="chapter" type="text" data-required="true" data-descriptions="chapter" />
+            </div>
+            <div class="input-group required">
+                <label class="label" for="province">4.适用省份</label>
+                <input name="province" type="text" data-required="true" data-descriptions="province" />
+            </div>
+            <div class="input-group required">
+                <label class="label" for="version">5.教材版本</label>
+                <input name="version" type="text" data-required="true" data-descriptions="version" />
+            </div>
+            <div class="input-group required">
+                <label class="label" for="version">试题内容</label>
+                <a href="javascript:;" class="file">
+                    <span class="label">请上传Word文档</span>
+                    <span class="blank" id="fileName"></span>
+                    <input name="paper" type="file" data-required="true" data-descriptions="paper" />
+                </a>
+            </div>
+            <div class="btn-group">
+                <button type="submit">提交信息</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <ul class="bottom-nav">
+            <li class="nav-item active">
+                <a href="javascript:void(0);">
+                    <img src="./public/img/icon-feedback-active.png" alt="反馈" />
+                    <p>反馈</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./feedback.html">
+                    <img src="./public/img/icon-survey.png" alt="组稿" />
+                    <p>组稿</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);">
+                    <img src="./public/img/icoin-user.png" alt="我的" />
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="./public/lib/zepto.min.js"></script>
+    <script src="./public/lib/zepto-mvalidate.js"></script>
+    <script>
+        $('#surveyForm').mvalidate({
+            type: 1,
+            sendForm: true,
+            firstInvalidFocus: false,
+            valid: function (event, options) {
+                //点击提交按钮时,表单通过验证触发函数
+                // event.preventDefault();
+            },
+            invalid: function (event, status, options) {
+                //点击提交按钮时,表单未通过验证触发函数
+            },
+            descriptions: {
+                subject: {
+                    required: '请输入科目',
+                },
+                round: {
+                    required: '请输入应用轮次',
+                },
+                chapter: {
+                    required: '请输入应用章节',
+                },
+                province: {
+                    required: '请输入适用省份',
+                },
+                version: {
+                    required: '请输入教材版本',
+                },
+                paper: {
+                    required: '请上传word文档',
+                },
+            },
+        })
+
+        $('form input[type="file"]').on('change', function (e) {
+            $(this)
+                .siblings('#fileName')
+                .text(this.value)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=640, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>衡水金卷服务平台</title>
+    <link rel="stylesheet" href="./public/lib/normalize.min.css" />
+    <link rel="stylesheet" href="./public/lib/validate.css" />
+    <link rel="stylesheet" href="./public/css/index.css" />
+</head>
+
+<body>
+    <header>
+        <h1 class="title">衡水金卷原创试题组稿</h1>
+        <img src="./public/img/header.png" alt="衡水金卷原创试题组稿" />
+    </header>
+
+    <section class="main-content">
+        <form class="form" id="feedbackForm" action="#">
+            <div class="input-group required">
+                <label class="label" for="name">1.姓名</label>
+                <input type="text" name="name" data-required="true" data-pattern="^([a-zA-Z0-9\u4e00-\u9fa5\·]{1,10})$"
+                    data-descriptions="name" />
+            </div>
+            <div class="input-group required">
+                <label class="label" for="school">2.所在学校</label>
+                <input type="text" name="school" data-required="true" data-descriptions="school" />
+            </div>
+            <div class="input-group required">
+                <label class="label" for="schoolBelongs">3.学校所属</label>
+                <div class="control-field">
+                    <label><input type="radio" name="schoolBelongs" data-required="true"
+                            data-descriptions="schoolBelongs" value="ProvinceKey" />省重点</label>
+                    <label><input type="radio" name="schoolBelongs" data-required="true"
+                            data-descriptions="schoolBelongs" value="CityKey" />市县重点</label>
+                    <label><input type="radio" name="schoolBelongs" data-required="true"
+                            data-descriptions="schoolBelongs" value="CityOrdinary" />市县普通高中</label>
+                    <label><input type="radio" name="schoolBelongs" data-required="true"
+                            data-descriptions="schoolBelongs" value="Vocational" />职教高中</label>
+                </div>
+            </div>
+            <div class="input-group required">
+                <label class="label" for="mobile">4.联系电话</label>
+                <input type="number" name="mobile" data-required="true" data-pattern="^1[3456789]\d{9}$"
+                    data-descriptions="mobile" />
+            </div>
+            <div class="input-group required">
+                <label class="label" for="product">5.产品名称
+                    <span class="desc">【多选】</span>
+                </label>
+                <div class="control-field">
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="1" />高三一轮复习单元检测卷</label>
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="2" />高三一轮复习周测卷</label>
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="3" />高三二轮复习专题卷</label>
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="4" />高考备考专项提分卷</label>
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="5" />高考分科综合卷</label>
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="6" />高考模拟调研卷</label>
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="7" />高考模拟信息卷</label>
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="8" />高考压轴卷</label>
+                    <label><input type="checkbox" name="product" data-required="true" data-descriptions="product"
+                            value="9" />其他</label>
+                </div>
+            </div>
+            <div class="input-group required">
+                <label class="label" for="feedbackSubject">6.反馈学科
+                    <span class="desc">【多选】</span>
+                </label>
+                <div class="control-field">
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="1" />语文</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="2" />理科</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="3" />文科</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="4" />英语</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="5" />物理</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="6" />化学</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="7" />生物</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="8" />历史</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="9" />地理</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="10" />政治</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="11" />文综</label>
+                    <label><input type="checkbox" name="feedbackSubject" data-required="true"
+                            data-descriptions="feedbackSubject" value="12" />理综</label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label class="label" for="subject">7.反馈意见
+                    <span class="desc">(如若5.6两项进行多选，请务必在下框中进行标注)</span>
+                </label>
+                <textarea name="feedback" id="feedback" cols="30" rows="10" data-conditional="feedback"
+                    data-descriptions="feedback"></textarea>
+            </div>
+            <div class="btn-group">
+                <button type="submit">提交建议</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <ul class="bottom-nav">
+            <li class="nav-item">
+                <a href="./servey.html">
+                    <img src="./public/img/icon-feedback.png" alt="反馈" />
+                    <p>反馈</p>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="javascript:void(0);">
+                    <img src="./public/img/icon-survey-active.png" alt="组稿" />
+                    <p>组稿</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);">
+                    <img src="./public/img/icoin-user.png" alt="我的" />
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="./public/lib/zepto.min.js"></script>
+    <script src="./public/lib/zepto-mvalidate.js"></script>
+
+    <script>
+        $('#feedbackForm').mvalidate({
+            type: 1,
+            sendForm: true,
+            firstInvalidFocus: false,
+            valid: function (event, options) {
+                //点击提交按钮时,表单通过验证触发函数
+                // event.preventDefault();
+            },
+            invalid: function (event, status, options) {
+                //点击提交按钮时,表单未通过验证触发函数
+                event.preventDefault();
+            },
+            conditional: {
+                feedback: function () {
+                    var selectedProductCount = 0
+                    var selectedFeedbackSubjectCount = 0
+                    $('input[name="product"]').each(function () {
+                        if ($(this).attr('checked') == true) {
+                            selectedProductCount++
+                        }
+                    });
+                    $('input[name="feedbackSubject"]').each(function () {
+                        if ($(this).attr('checked') == true) {
+                            selectedFeedbackSubjectCount++
+                        }
+                    });
+                    if (selectedProductCount > 1 || selectedFeedbackSubjectCount > 1) {
+                        if (!$('textarea[name="feedback"]').val()) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            },
+            descriptions: {
+                name: {
+                    required: '请输入姓名',
+                    pattern: '请输入正确的姓名',
+                },
+                school: {
+                    required: '请输入所在学校',
+                },
+                schoolBelongs: {
+                    required: '请选择学校所属',
+                },
+                mobile: {
+                    required: '请输入联系电话',
+                    pattern: '联系电话格式输入不正确',
+                },
+                product: {
+                    required: '产品名称至少选择一项',
+                },
+                feedbackSubject: {
+                    required: '反馈学科至少选择一项',
+                },
+                feedback: {
+                    conditional: '5.6两项进行了多选，请务必进行标注'
+                }
+            },
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+create table feedback(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  school VARCHAR(100),
+  schoolBelong VARCHAR(100),
+  phone VARCHAR(100),
+  productName VARCHAR(100),
+  subject VARCHAR(100),
+  advice VARCHAR(1024));
+
+create table test_paper(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  subject VARCHAR(100),
+  times VARCHAR(100),
+  chapter VARCHAR(100),
+  province VARCHAR(100),
+  version VARCHAR(100),
+  paperId INT
+);
+
+create table paper_file(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  fileName VARCHAR(100),
+  contentType VARCHAR(100),
+  path VARCHAR(100)
+);

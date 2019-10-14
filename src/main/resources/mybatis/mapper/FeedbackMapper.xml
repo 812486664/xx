@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heshuijinjuan.service.persistence.mapper.FeedbackMapper">
+    <insert id="add" parameterType="com.heshuijinjuan.service.common.po.FeedbackPo">
+        INSERT INTO feedback(name, school, schoolBelong, phone, productName, subject, advice) VALUES
+            (#{name}, #{school}, #{schoolBelong}, #{phone}, #{productName}, #{subject}, #{advice})
+    </insert>
+
+    <select id="select" resultType="com.heshuijinjuan.service.common.po.FeedbackPo">
+        SELECT * FROM feedback;
+    </select>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM feedback WHERE id=#{id}
+    </delete>
+
+</mapper>
